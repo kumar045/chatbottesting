@@ -15,7 +15,7 @@
             const style = document.createElement('style');
             style.textContent = styleString;
             document.head.append(style);
-        }
+        };
 
         iframeStyles(`
             .chat-frame {
@@ -31,11 +31,11 @@
         document.body.appendChild(iframe);
 
         window.addEventListener("message", (e) => {
-            if(e.origin !== "https://chatbot-builder-one.vercel.app/") return null;
+            if (e.origin !== "https://chatbot-builder-one.vercel.app") return null;
             let dimensions = JSON.parse(e.data);
             iframe.width = dimensions.width;
             iframe.height = dimensions.height;
-            iframe.contentWindow.postMessage("4b5c1b95-8720-4f4d-b9f0-d1d4d6895263", "https://chatbot-builder-one.vercel.app/");
+            iframe.contentWindow.postMessage("4b5c1b95-8720-4f4d-b9f0-d1d4d6895263", "https://chatbot-builder-one.vercel.app");
         });
     </script>
 </body>
